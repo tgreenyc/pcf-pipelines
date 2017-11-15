@@ -131,8 +131,8 @@ security_configuration=$(
 
 network_assignment=$(
 jq -n \
-  --arg infra_availability_zones "$INFRA_NW_AZS" \
-  --arg network "$INFRA_NETWORK_NAME" \
+  --arg infra_availability_zones "$DEPLOYMENT_NW_AZS" \
+  --arg network "$DEPLOYMENT_NETWORK_NAME" \
   '
   {
     "singleton_availability_zone": ($infra_availability_zones | split(",") | .[0]),
